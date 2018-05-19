@@ -50,46 +50,6 @@ public class MainActivity extends AppCompatActivity {
         displayMessage(priceMessage);
     }
 
-    //does the user want whipped cream?
-    CheckBox whippedCreamCheckBox = (CheckBox)findViewById(R.id.whipped_cream_checkbox);
-    boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
-
-    //does the user want chocolate
-    CheckBox chocolateCheckBox = (CheckBox)findViewById(R.id.chocolate_checkbox);
-    boolean hasChocolate = chocolateCheckBox.isChecked();
-
-    //calculation of additions to price
-    int price = calculatePrice();
-    String priceMessage = createOrderSummary(name, price, hasWhippedCream, hasChocolate);
-    displayMessage(priceMessage);}
-
-    /**
-     * Creates summary of order.
-     *@param price of order
-     *@param addWhippedCream if user wants whipped cream
-     *@param addChocolate if user wants to add chocolate
-     *@return text summary
-     */
-    private String createOrderSummary(String name,int price,boolean addWhippedCream,boolean addChocolate){
-        String priceMessage = "Name: ” + name ;
-        priceMessage += "\nAdd whipped cream? ” +addWhippedCream;
-        priceMessage += "\nAdd chocolate? ” + addChocolate;
-        priceMessage += "\nQuantity: ” + quantity;
-        priceMessage += "\nTotal: $ ” + price;
-        priceMessage += "\nThank you!”;
-        return priceMessage;
-    }
-
-    /**
-     * Calculates the price of the order.
-     *
-     * @return for total price
-     */
-    private int calculatePrice() {
-        return quantity * 5;
-
-    }
-
     /**
      * This method displays the given quantity value on the screen.
      */
